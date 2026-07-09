@@ -1,0 +1,22 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install biospectral (dependency)
+        run: pip install git+https://github.com/kostyk348/biospectral.git
+      - name: Install CLI
+        run: pip install -e .
+      - name: fingerprint
+        run: python -m biospectral_cli fingerprint ATGGTGCACCTGACTCCTGAGG
+      - name: screen (HBB reference database)
+        run: python -m biospectral_cli screen ATGGTGCACCTGACTCCTGTGG
+      - name: bench
+        run: python -m biospectral_cli bench
