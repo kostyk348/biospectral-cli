@@ -1,5 +1,8 @@
 # biospectral-cli
 
+[![CI](https://github.com/kostyk348/biospectral-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/biospectral-cli/actions/workflows/ci.yml)
+
+
 Command-line interface for [biospectral](https://github.com/kostyk348/biospectral) —
 Dirichlet L-function spectral analysis of DNA and protein sequences.
 
@@ -22,9 +25,15 @@ biospectral-cli fingerprint MKVLSPADKTNVKAAWGKV --kind protein
 
 ```bash
 # built-in reference gene database
+
+[![CI](https://github.com/kostyk348/biospectral-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/biospectral-cli/actions/workflows/ci.yml)
+
 biospectral-cli screen ATGGTGCACCTGACTCCTGTGG
 
 # custom database (FASTA or JSON {"name": "seq"})
+
+[![CI](https://github.com/kostyk348/biospectral-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/kostyk348/biospectral-cli/actions/workflows/ci.yml)
+
 biospectral-cli screen QUERY.fa --db database.fasta --top 10
 ```
 
